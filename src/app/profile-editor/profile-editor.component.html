@@ -1,0 +1,63 @@
+<b>public void forEach(Consumer<? super E> action)</b>
+<p></p>
+<div class="container">
+	<div class="row justify-content-md-center">
+		<div class="col-md-8 mt-5">
+		
+			<div class="mt-4"></div>
+			<form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+				  <label><b>Rate the method:</b></label>
+          <input type="range" formControlName="rate_method" class="form-control"  (change)="showFull()">
+        </div>
+				<hr>
+        <div *ngIf="show">
+          <div class="form-group">
+            <label><b>Select important Sentences from the API reference documentation:</b></label>
+            <div class="checkbox-group" [class.is-invalid]="f['categoriesFormGroup'].invalid">
+              <div *ngFor="let item of categories; let i = index" class="checkbox">
+                <label><input type="checkbox" [formControl]="categoriesFormGroup?.controls[item.id]" /> {{ categories[i]?.title }}
+                </label>
+              </div>
+            </div>
+            
+				<hr />
+            <!-- <div class="invalid-feedback" role="alert">
+              FormGroup - At least one reason must be selected.
+            </div> -->
+            <!-- <div class="alert alert-primary mt-2">
+              {{ categoriesFormGroupSelectedIds | json}}
+            </div> -->
+          </div>
+          <div class="form-group">
+            <label><b>Select important Sentences from the API reference documentation:</b></label>
+            <div class="checkbox-group">
+              <div *ngFor="let item of sentences; let i = index" class="checkbox">
+                <label><input type="checkbox" [formControl]="sentencesFormGroup?.controls[item.id]" /> {{ sentences[i]?.title }}
+                </label>
+              </div>
+            </div>
+           
+				<hr />
+          </div>
+          <p>
+          <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+
+        </div>
+<!-- 
+				<h3>Form Value</h3>
+				<div class="mb-2">
+					<pre>{{ form.value | json }}</pre>
+				</div> -->
+
+			</form>
+		</div>
+	</div>
+ 
+</div>
+
+
+
+<!-- <ng-template #loadingTmpl>
+	<div>Loading...</div>
+</ng-template> -->

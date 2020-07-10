@@ -1,0 +1,153 @@
+<div class="container">			
+			<form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <div class="mt-4"> <b>Method: public void add(int index, E element)</b></div>
+				  <label><b>Rate the method:</b></label>
+      
+          <input id="1" type="radio" class="custom-control-input" value="male" name="rate_method" formControlName="rate_method">
+          <label class="custom-control-label" for="1">1</label>
+     
+          <input id="2" type="radio" class="custom-control-input" value="2" name="rate_method" formControlName="rate_method">
+          <label class="custom-control-label" for="2">2</label>
+
+          <input id="3" type="radio" class="custom-control-input" value="3" name="rate_method" formControlName="rate_method">
+          <label class="custom-control-label" for="3">3</label>
+
+          <input id="4" type="radio" class="custom-control-input" value="4" name="rate_method" formControlName="rate_method">
+          <label class="custom-control-label" for="4">4</label>
+
+          <input id="5" type="radio" class="custom-control-input" value="5" name="rate_method" formControlName="rate_method">
+          <label class="custom-control-label" for="5">5</label>
+        </div>
+          <!-- <input type="range" formControlName="rate_method" class="form-control"  (change)="showFull()"> -->
+    
+				<hr>
+        <div *ngIf="show">
+          <div class="form-group">
+            <label><b>Select reasons behind the method being important:</b></label>
+            <div class="checkbox-group" [class.is-invalid]="f['categoriesFormGroup'].invalid">
+              <div *ngFor="let item of categories; let i = index" class="checkbox">
+                <label><input type="checkbox" [formControl]="categoriesFormGroup?.controls[item.id]" /> {{ categories[i]?.title }}
+                </label>
+              </div>
+            </div>
+          </div>
+          <hr />
+            <!-- <div class="invalid-feedback" role="alert">
+              FormGroup - At least one reason must be selected.
+            </div> -->
+            <!-- <div class="alert alert-primary mt-2">
+              {{ categoriesFormGroupSelectedIds | json}}
+            </div> -->
+         
+          <div class="form-group">
+            <label><b>Select important Sentences from the API reference documentation:</b></label>
+            <div class="checkbox-group">
+              <div *ngFor="let item of sentences; let i = index" class="checkbox">
+                <label><input type="checkbox" [formControl]="sentencesFormGroup?.controls[item.id]" /> {{ sentences[i]?.title }}
+                </label>
+              </div>
+            </div>
+              <hr />
+          </div>
+          <p>
+            </div>
+             <button type="submit" class="btn btn-primary">Submit</button>
+          <!-- <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button></div>
+         -->
+            
+			
+
+				<!-- <h3>Form Value</h3>
+				<div class="mb-2">
+					<pre>{{ form.value | json }}</pre>
+				</div> -->
+
+			</form>
+		</div>
+
+
+
+
+<!-- <ng-template #loadingTmpl>
+	<div>Loading...</div>
+</ng-template> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div *ngIf="!expand"> -->
+<!-- <label>
+  <!-- Name:
+  <input type="text" [formControl]="name"> -->
+  <!-- Rate:
+  <input type="range" [formControl]="rate_method" (change)="showDescription()">
+</label>
+
+  <div *ngIf="expand">
+<label>
+  Reason:
+</label> -->
+
+  <!-- <div *ngFor="let cartoon of cartoonsData">
+    <input type="checkbox" [formControlName]="cartoon" />
+     {{ cartoon.name }}
+  </div>
+   <p>
+  <!-- <button (click)="showDescription()">Next</button> -->
+<!-- </p> --> 
+
+<!-- </div> -->
+
+
+    <!-- <label>
+      Select sentences:
+    </label>
+    <div *ngFor="let cartoon2 of cartoonsData2">
+    <input type="checkbox" [formControl]=""/>
+    {{ cartoon2.name }} -->
+  <!-- </div> -->
+  <!-- <p>
+   <div style="width:20%; float: left;">
+  <button (click)="hideDescription()">Back</button> -->
+<!-- </div> -->
+
+
+<!-- <p>
+  Value: {{ name.value }}
+</p> -->
+
+
+ <!-- <div>
+  <button (click)="submit()">submit</button>
+</div>
+
+  </div>   --> 
+
+<!-- <p>
+  <button (click)="updateName()">Update Name</button>
+</p> -->
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
