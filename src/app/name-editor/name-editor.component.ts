@@ -119,7 +119,7 @@ export class NameEditorComponent  {
 
   onSubmit() {
 
-    let path = __dirname+'\\my.txt';
+    let path = __dirname+'/my.txt';
     console.log(path);
 let buffer = new Buffer('Those who wish to follow me\nI welcome with my hands\nAnd the red sun sinks at last');
 
